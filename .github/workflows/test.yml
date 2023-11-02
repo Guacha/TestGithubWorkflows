@@ -2,6 +2,24 @@ name: Jest Tests
 
 on:
   workflow_dispatch:
+    inputs:
+      test:
+        description: 'Test'
+        required: true
+        default: 'true'
+      selected-option:
+        description: 'Selected option'
+        required: true
+        type: choice
+        options:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+      boolean:
+        type: boolean
+        description: 'Boleano'
 
 jobs:
   test:
