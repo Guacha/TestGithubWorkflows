@@ -34,3 +34,15 @@ jobs:
 
     - name: Run Jest tests
       run: npm test
+
+    - name: Upload coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: coverage
+
+    - name: Echo selected Options
+      run: |
+        echo ${{ github.event.inputs.selected-option }}
+        echo ${{ github.event.inputs.boolean }}
+        echo ${{ github.event.inputs.test }}
