@@ -6,7 +6,7 @@ on:
       test:
         description: 'Test'
         required: true
-        default: 'true'
+        default: 'String Value'
       selected-option:
         description: 'Selected option'
         required: true
