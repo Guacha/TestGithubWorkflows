@@ -1,0 +1,16 @@
+name: Test on Tag
+
+on:
+  push:
+    branches:
+      - develop
+    tags:
+      - 'v*'
+    
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Echo Tag Name
+          run: echo Tag Pushed to ${{ github.ref }}
