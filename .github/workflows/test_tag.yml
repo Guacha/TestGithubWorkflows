@@ -11,4 +11,6 @@ jobs:
         steps:
 
         - name: Echo Tag Name
-          run: echo Tag Pushed to ${{ github.ref }}
+          env:
+            TAG_NAME: echo ${{ github.ref }} | sed 's/refs\/tags\///g'
+          run: echo Tag Pushed to ${{ env.TAG_NAME }}
