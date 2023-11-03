@@ -10,9 +10,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
 
-        - name: Set Environment using Tag Name
-          run: |
-            export TAG_NAME=$(echo ${{ github.ref }} | sed -e 's/refs\/tags\///g')
-
         - name: Echo Tag Name
-          run: echo Tag Pushed to ${TAG_NAME}
+          run: echo Tag Pushed to ${{ github.ref_name }}
