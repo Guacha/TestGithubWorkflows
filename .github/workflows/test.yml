@@ -4,23 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       test:
-        description: 'Test'
+        description: 'Message'
         required: true
         default: 'String Value'
-      selected-option:
-        description: 'Selected option'
-        required: true
-        type: choice
-        options:
-        - '1'
-        - '2'
-        - '3'
-        - '4'
-        - '5'
-      boolean:
-        type: boolean
-        description: 'Boleano'
-
+        
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -31,7 +18,7 @@ jobs:
       with:
         slack-bot-user-oauth-access-token: ${{ secrets.SLACK_TOKEN }}
         slack-channel: C05RF4QQ07L
-        slack-text: Hola Mundo!
+        slack-text: Hola Mundo! ${{ github.event.inputs.test }}
     
     
     
