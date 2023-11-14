@@ -19,6 +19,7 @@ jobs:
         slack-bot-user-oauth-access-token: ${{ secrets.SLACK_TOKEN }}
         slack-channel: C05RF4QQ07L
         slack-text: Hola Mundo! ${{ github.event.inputs.test }}
+        slack-optional-icon_emoji: ":fire:"
     
     
     
